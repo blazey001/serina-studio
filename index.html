@@ -1,22 +1,36 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serina Studio</title>
 
     <style>
-        *{box-sizing:border-box;margin:0;padding:0}
-        html{scroll-behavior:smooth}
+        *{
+            box-sizing:border-box;
+            margin:0;
+            padding:0;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
         body{
             font-family:Arial,Helvetica,sans-serif;
             background:linear-gradient(135deg,#eef8f1,#dcefe3);
             color:#29443a;
-            line-height:1.6
+            line-height:1.6;
         }
-        a{text-decoration:none;color:inherit}
-        button{font-family:inherit}
+
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
+
+        button{
+            font-family:inherit;
+        }
 
         nav{
             position:sticky;
@@ -28,24 +42,27 @@
             padding:18px 7%;
             background:rgba(255,255,255,.92);
             backdrop-filter:blur(12px);
-            border-bottom:1px solid rgba(70,110,90,.15)
+            border-bottom:1px solid rgba(70,110,90,.15);
         }
+
         .logo{
             font-size:25px;
             font-weight:bold;
             color:#7fa6b8;
-            text-shadow:2px 2px 0 rgba(127,166,184,.18)
         }
+
         .nav-links{
             display:flex;
             gap:25px;
-            align-items:center
+            align-items:center;
         }
+
         .nav-links a{
             color:#416052;
             font-size:14px;
-            font-weight:600
+            font-weight:600;
         }
+
         .cart-button{
             border:none;
             background:#7fa6b8;
@@ -53,7 +70,7 @@
             padding:10px 17px;
             border-radius:20px;
             cursor:pointer;
-            font-weight:bold
+            font-weight:bold;
         }
 
         .hero{
@@ -62,102 +79,134 @@
             align-items:center;
             justify-content:center;
             text-align:center;
-            padding:80px 20px
+            padding:80px 20px;
         }
-        .hero-content{max-width:750px}
+
+        .hero-content{
+            max-width:750px;
+        }
+
         .hero h1{
             font-size:clamp(50px,8vw,90px);
             color:#7fa6b8;
-            margin-bottom:15px
+            margin-bottom:15px;
         }
+
         .hero p{
             font-size:19px;
             color:#526c61;
-            margin-bottom:30px
+            margin-bottom:30px;
         }
+
         .hero-buttons{
             display:flex;
             justify-content:center;
             gap:15px;
-            flex-wrap:wrap
+            flex-wrap:wrap;
         }
 
-        .main-button,.secondary-button{
+        .main-button,
+        .secondary-button{
             border:none;
             padding:14px 25px;
             border-radius:30px;
             cursor:pointer;
-            font-weight:bold
+            font-weight:bold;
         }
-        .main-button{background:#7fa6b8;color:white}
+
+        .main-button{
+            background:#7fa6b8;
+            color:white;
+        }
+
         .secondary-button{
             background:white;
             color:#567064;
-            border:1px solid #bcd1c4
+            border:1px solid #bcd1c4;
         }
 
-        section{padding:80px 7%}
-        .section-title{text-align:center;margin-bottom:45px}
+        section{
+            padding:80px 7%;
+        }
+
+        .section-title{
+            text-align:center;
+            margin-bottom:45px;
+        }
+
         .section-title h2{
             font-size:38px;
             color:#4c6e5f;
-            margin-bottom:8px
+            margin-bottom:8px;
         }
-        .section-title p{color:#70857b}
+
+        .section-title p{
+            color:#70857b;
+        }
 
         .filters{
             display:flex;
             justify-content:center;
             flex-wrap:wrap;
             gap:10px;
-            margin-bottom:35px
+            margin-bottom:35px;
         }
+
         .filter-button{
             border:1px solid #bcd1c4;
             background:white;
             color:#567064;
             padding:10px 17px;
             border-radius:20px;
-            cursor:pointer
+            cursor:pointer;
         }
+
         .filter-button.active{
             background:#7fa6b8;
             color:white;
-            border-color:#7fa6b8
         }
 
         .product-grid{
             display:grid;
             grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-            gap:22px
+            gap:22px;
         }
+
         .product-card{
             background:rgba(255,255,255,.88);
             border:1px solid rgba(100,140,120,.15);
             border-radius:20px;
             padding:24px;
-            box-shadow:0 10px 30px rgba(70,100,80,.08)
+            box-shadow:0 10px 30px rgba(70,100,80,.08);
         }
+
         .product-icon{
             height:120px;
             display:flex;
             justify-content:center;
             align-items:center;
             font-size:55px;
-            margin-bottom:15px
+            margin-bottom:15px;
         }
-        .product-card h3{color:#496858;margin-bottom:8px}
+
+        .product-card h3{
+            color:#496858;
+            margin-bottom:8px;
+        }
+
         .product-card p{
             color:#718279;
             font-size:14px;
-            min-height:65px
+            min-height:65px;
         }
+
         .product-price{
             font-size:18px;
             font-weight:bold;
             color:#7fa6b8;
-            margin:12px 0
+            margin:12px 0;
         }
+
         .order-button{
             width:100%;
             border:none;
@@ -166,25 +215,31 @@
             padding:11px;
             border-radius:20px;
             cursor:pointer;
-            font-weight:bold
+            font-weight:bold;
         }
 
         .gift-grid{
             display:grid;
             grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:22px
+            gap:22px;
         }
+
         .gift-card{
             background:white;
             padding:25px;
             border-radius:22px;
-            border:1px solid #d2e2d7
+            border:1px solid #d2e2d7;
         }
-        .gift-card h3{color:#4c6e5f;margin-bottom:10px}
+
+        .gift-card h3{
+            color:#4c6e5f;
+            margin-bottom:10px;
+        }
+
         .gift-card p{
             color:#74867d;
             font-size:14px;
-            min-height:55px
+            min-height:55px;
         }
 
         .custom-box{
@@ -194,16 +249,18 @@
             border-radius:25px;
             padding:40px;
             text-align:center;
-            box-shadow:0 15px 35px rgba(70,100,80,.08)
+            box-shadow:0 15px 35px rgba(70,100,80,.08);
         }
+
         .custom-box h3{
             color:#4c6e5f;
             font-size:28px;
-            margin-bottom:15px
+            margin-bottom:15px;
         }
+
         .custom-box p{
             color:#718279;
-            margin-bottom:25px
+            margin-bottom:25px;
         }
 
         .choice-buttons{
@@ -211,19 +268,16 @@
             justify-content:center;
             flex-wrap:wrap;
             gap:10px;
-            margin:20px 0
+            margin:20px 0;
         }
+
         .choice-button{
             border:1px solid #bfd3c6;
             background:white;
             color:#587064;
             padding:10px 18px;
             border-radius:20px;
-            cursor:pointer
-        }
-        .choice-button.selected{
-            background:#7fa6b8;
-            color:white
+            cursor:pointer;
         }
 
         .custom-choice-box{
@@ -232,22 +286,43 @@
             padding:25px;
             background:#f4faf6;
             border-radius:20px;
-            text-align:left
+            text-align:left;
         }
-        .custom-choice-box.show{display:block}
+
+        .custom-choice-box.show{
+            display:block;
+        }
+
         .custom-choice-box label{
             display:block;
-            margin:10px 0;
+            margin:15px 0;
             color:#526c61;
-            font-weight:600
+            font-weight:600;
         }
+
         .custom-choice-box select,
-        .custom-choice-box input{
+        .custom-choice-box input,
+        .custom-choice-box textarea{
             width:100%;
             padding:11px;
             border:1px solid #c9dacf;
             border-radius:12px;
-            margin-top:5px
+            margin-top:5px;
+            font-family:inherit;
+        }
+
+        .custom-choice-box textarea{
+            min-height:100px;
+            resize:vertical;
+        }
+
+        .sticker-info{
+            background:#e7f3eb;
+            border-radius:15px;
+            padding:15px;
+            margin:15px 0;
+            color:#526c61;
+            font-size:14px;
         }
 
         .about-content{
@@ -256,11 +331,12 @@
             text-align:center;
             background:rgba(255,255,255,.75);
             padding:40px;
-            border-radius:25px
+            border-radius:25px;
         }
+
         .about-content p{
             color:#63786d;
-            margin-bottom:15px
+            margin-bottom:15px;
         }
 
         .contact-box{
@@ -269,36 +345,50 @@
             text-align:center;
             background:white;
             padding:40px;
-            border-radius:25px
+            border-radius:25px;
         }
-        .contact-box p{color:#718279;margin:8px 0}
 
-        #checkout{display:none}
+        .contact-box p{
+            color:#718279;
+            margin:8px 0;
+        }
+
+        #checkout{
+            display:none;
+        }
+
         .checkout-container{
             max-width:900px;
             margin:auto;
             display:grid;
             grid-template-columns:1fr 1fr;
-            gap:30px
+            gap:30px;
         }
+
         .checkout-box{
             background:white;
             padding:30px;
             border-radius:22px;
-            box-shadow:0 10px 30px rgba(70,100,80,.08)
+            box-shadow:0 10px 30px rgba(70,100,80,.08);
         }
+
         .checkout-box h3{
             color:#4c6e5f;
-            margin-bottom:20px
+            margin-bottom:20px;
         }
-        .form-group{margin-bottom:15px}
+
+        .form-group{
+            margin-bottom:15px;
+        }
+
         .form-group label{
             display:block;
             font-size:14px;
             font-weight:bold;
             color:#526c61;
-            margin-bottom:5px
+            margin-bottom:5px;
         }
+
         .form-group input,
         .form-group textarea{
             width:100%;
@@ -306,43 +396,53 @@
             border-radius:12px;
             padding:12px;
             font-family:inherit;
-            outline:none
+            outline:none;
         }
+
         .form-group textarea{
             min-height:90px;
-            resize:vertical
+            resize:vertical;
         }
 
         .payment-options{
             display:flex;
             flex-direction:column;
-            gap:10px
+            gap:10px;
         }
+
         .payment-option{
             border:1px solid #c9dacf;
             border-radius:12px;
             padding:12px;
-            cursor:pointer
+            cursor:pointer;
         }
-        .payment-option input{margin-right:8px}
 
-        .checkout-items{margin-bottom:20px}
+        .payment-option input{
+            margin-right:8px;
+        }
+
+        .checkout-items{
+            margin-bottom:20px;
+        }
+
         .checkout-item{
             display:flex;
             justify-content:space-between;
             gap:15px;
             padding:10px 0;
             border-bottom:1px solid #e4eee7;
-            font-size:14px
+            font-size:14px;
         }
+
         .checkout-total{
             display:flex;
             justify-content:space-between;
             font-size:21px;
             font-weight:bold;
             color:#4c6e5f;
-            margin-top:20px
+            margin-top:20px;
         }
+
         .place-order-button{
             width:100%;
             margin-top:25px;
@@ -353,7 +453,7 @@
             border-radius:25px;
             font-weight:bold;
             cursor:pointer;
-            font-size:16px
+            font-size:16px;
         }
 
         #successMessage{
@@ -364,37 +464,55 @@
             background:white;
             padding:50px 30px;
             border-radius:25px;
-            box-shadow:0 15px 35px rgba(70,100,80,.1)
+            box-shadow:0 15px 35px rgba(70,100,80,.1);
         }
+
         #successMessage h2{
             color:#4c6e5f;
-            margin-bottom:12px
+            margin-bottom:12px;
         }
+
         #successMessage p{
             color:#718279;
-            margin-bottom:8px
+            margin-bottom:8px;
         }
+
         .order-code{
             font-size:28px;
             font-weight:bold;
             color:#7fa6b8;
             letter-spacing:2px;
-            margin:20px 0
-        }
-        .vipps-box{
             margin:20px 0;
-            padding:20px;
-            background:#f4faf6;
-            border-radius:18px
         }
-        .vipps-button{
-            display:inline-block;
-            background:#7fa6b8;
-            color:white;
-            padding:12px 22px;
-            border-radius:25px;
+
+        .vipps-box{
+            margin:25px 0;
+            padding:25px;
+            background:#f4faf6;
+            border-radius:18px;
+        }
+
+        .vipps-number{
+            font-size:30px;
             font-weight:bold;
-            margin-top:10px
+            color:#7fa6b8;
+            margin:10px 0;
+            letter-spacing:1px;
+        }
+
+        .vipps-name{
+            font-size:18px;
+            font-weight:bold;
+            color:#4c6e5f;
+        }
+
+        .vipps-message{
+            background:white;
+            border-radius:12px;
+            padding:12px;
+            margin-top:15px;
+            font-weight:bold;
+            color:#526c61;
         }
 
         .cart-overlay{
@@ -402,8 +520,9 @@
             inset:0;
             background:rgba(30,50,40,.35);
             z-index:2000;
-            display:none
+            display:none;
         }
+
         .cart-panel{
             position:absolute;
             right:0;
@@ -412,42 +531,52 @@
             width:min(420px,95%);
             background:white;
             padding:30px;
-            overflow-y:auto
+            overflow-y:auto;
         }
+
         .cart-header{
             display:flex;
             justify-content:space-between;
             align-items:center;
-            margin-bottom:25px
+            margin-bottom:25px;
         }
-        .cart-header h2{color:#4c6e5f}
+
+        .cart-header h2{
+            color:#4c6e5f;
+        }
+
         .close-cart{
             border:none;
             background:transparent;
             font-size:27px;
-            cursor:pointer
+            cursor:pointer;
         }
+
         .cart-item{
             display:grid;
             grid-template-columns:1fr auto;
             gap:10px;
             padding:15px 0;
-            border-bottom:1px solid #e0ebe4
+            border-bottom:1px solid #e0ebe4;
         }
+
         .cart-item-name{
             font-weight:bold;
-            color:#4c6e5f
+            color:#4c6e5f;
         }
+
         .cart-item-price{
             color:#7fa6b8;
-            font-weight:bold
+            font-weight:bold;
         }
+
         .quantity-controls{
             display:flex;
             align-items:center;
             gap:8px;
-            margin-top:7px
+            margin-top:7px;
         }
+
         .quantity-controls button{
             border:none;
             width:27px;
@@ -455,29 +584,33 @@
             border-radius:50%;
             background:#e5f0e8;
             cursor:pointer;
-            font-weight:bold
+            font-weight:bold;
         }
+
         .remove-button{
             border:none;
             background:transparent;
             color:#a56c6c;
             cursor:pointer;
             font-size:12px;
-            margin-top:6px
+            margin-top:6px;
         }
+
         .cart-empty{
             text-align:center;
             color:#7b8d84;
-            padding:40px 0
+            padding:40px 0;
         }
+
         .cart-total{
             display:flex;
             justify-content:space-between;
             margin-top:25px;
             font-size:21px;
             font-weight:bold;
-            color:#4c6e5f
+            color:#4c6e5f;
         }
+
         .checkout-button{
             width:100%;
             margin-top:20px;
@@ -487,7 +620,7 @@
             padding:14px;
             border-radius:25px;
             cursor:pointer;
-            font-weight:bold
+            font-weight:bold;
         }
 
         footer{
@@ -495,14 +628,26 @@
             padding:40px 20px;
             background:rgba(255,255,255,.75);
             color:#70857b;
-            margin-top:40px
+            margin-top:40px;
         }
 
         @media(max-width:750px){
-            .nav-links a{display:none}
-            section{padding:60px 5%}
-            .checkout-container{grid-template-columns:1fr}
-            .custom-box{padding:25px}
+
+            .nav-links a{
+                display:none;
+            }
+
+            section{
+                padding:60px 5%;
+            }
+
+            .checkout-container{
+                grid-template-columns:1fr;
+            }
+
+            .custom-box{
+                padding:25px;
+            }
         }
     </style>
 </head>
@@ -510,56 +655,93 @@
 <body>
 
 <nav>
-    <div class="logo">Serina Studio</div>
+
+    <div class="logo">
+        Serina Studio
+    </div>
 
     <div class="nav-links">
+
         <a href="#home">Home</a>
         <a href="#shop">Shop</a>
         <a href="#giftboxes">Gift Boxes</a>
         <a href="#custom">Custom</a>
         <a href="#about">About</a>
 
-        <button class="cart-button" onclick="openCart()">
-            🛒 Cart <span id="cartCount">0</span>
+        <button class="cart-button"
+                onclick="openCart()">
+
+            🛒 Cart
+            <span id="cartCount">0</span>
+
         </button>
+
     </div>
+
 </nav>
 
+
 <section id="home" class="hero">
+
     <div class="hero-content">
-        <h1>Serina Studio</h1>
+
+        <h1>
+            Serina Studio
+        </h1>
 
         <p>
             Handmade little things, made with love ♡
         </p>
 
         <div class="hero-buttons">
+
             <button class="main-button"
                     onclick="document.getElementById('shop').scrollIntoView()">
+
                 Shop Now
+
             </button>
 
             <button class="secondary-button"
                     onclick="document.getElementById('custom').scrollIntoView()">
+
                 Create Something Custom
+
             </button>
+
         </div>
+
     </div>
+
 </section>
+
 
 <section id="shop">
 
     <div class="section-title">
-        <h2>Shop</h2>
-        <p>Cute handmade things for you and your favorite people.</p>
+
+        <h2>
+            Shop
+        </h2>
+
+        <p>
+            Cute handmade things for you and your favorite people.
+        </p>
+
     </div>
 
+
     <div class="filters">
+
         <button class="filter-button active"
-                onclick="filterShop('all',this)">All</button>
+                onclick="filterShop('all',this)">
+            All
+        </button>
 
         <button class="filter-button"
-                onclick="filterShop('accessories',this)">Accessories</button>
+                onclick="filterShop('accessories',this)">
+            Accessories
+        </button>
 
         <button class="filter-button"
                 onclick="filterShop('stationery',this)">
@@ -575,355 +757,856 @@
                 onclick="filterShop('custom',this)">
             Custom
         </button>
+
     </div>
+
+
+    <!-- ACCESSORIES -->
 
     <div id="category-accessories">
 
         <div class="section-title">
-            <h2>Accessories</h2>
+
+            <h2>
+                Accessories
+            </h2>
+
         </div>
 
         <div class="product-grid">
 
+
             <div class="product-card">
-                <div class="product-icon">📿</div>
-                <h3>Custom Bracelet</h3>
-                <p>A handmade bracelet in your favorite colors.</p>
-                <div class="product-price">49 NOK</div>
+
+                <div class="product-icon">
+                    📿
+                </div>
+
+                <h3>
+                    Custom Bracelet
+                </h3>
+
+                <p>
+                    A handmade bracelet in your favorite colors.
+                </p>
+
+                <div class="product-price">
+                    49 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="openCustom('Custom Bracelet',49)">
                     CUSTOMIZE
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">🫶</div>
-                <h3>Friendship Bracelet</h3>
-                <p>A cute bracelet made for you and your bestie.</p>
-                <div class="product-price">45 NOK</div>
+
+                <div class="product-icon">
+                    🫶
+                </div>
+
+                <h3>
+                    Friendship Bracelet
+                </h3>
+
+                <p>
+                    A cute bracelet made for you and your bestie.
+                </p>
+
+                <div class="product-price">
+                    45 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="addToCart('Friendship Bracelet',45)">
                     ADD TO CART
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">📿</div>
-                <h3>Beaded Necklace</h3>
-                <p>A handmade beaded necklace in your favorite colors.</p>
-                <div class="product-price">69 NOK</div>
+
+                <div class="product-icon">
+                    📿
+                </div>
+
+                <h3>
+                    Beaded Necklace
+                </h3>
+
+                <p>
+                    A handmade beaded necklace in your favorite colors.
+                </p>
+
+                <div class="product-price">
+                    69 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="openCustom('Beaded Necklace',69)">
                     CUSTOMIZE
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">🔑</div>
-                <h3>Keychain</h3>
-                <p>A cute handmade keychain in your favorite colors.</p>
-                <div class="product-price">49 NOK</div>
+
+                <div class="product-icon">
+                    🔑
+                </div>
+
+                <h3>
+                    Keychain
+                </h3>
+
+                <p>
+                    A cute handmade keychain in your favorite colors.
+                </p>
+
+                <div class="product-price">
+                    49 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="openCustom('Keychain',49)">
                     CUSTOMIZE
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">📱</div>
-                <h3>Phone Charm</h3>
-                <p>A small custom charm for your phone.</p>
-                <div class="product-price">49 NOK</div>
+
+                <div class="product-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Phone Charm
+                </h3>
+
+                <p>
+                    A small custom charm for your phone.
+                </p>
+
+                <div class="product-price">
+                    49 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="openCustom('Phone Charm',49)">
                     CUSTOMIZE
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">👜</div>
-                <h3>Bag Charm</h3>
-                <p>A cute handmade charm for your bag.</p>
-                <div class="product-price">59 NOK</div>
+
+                <div class="product-icon">
+                    👜
+                </div>
+
+                <h3>
+                    Bag Charm
+                </h3>
+
+                <p>
+                    A cute handmade charm for your bag.
+                </p>
+
+                <div class="product-price">
+                    59 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="openCustom('Bag Charm',59)">
                     CUSTOMIZE
                 </button>
+
             </div>
 
+
         </div>
+
     </div>
+
+
+    <!-- STATIONERY -->
 
     <div id="category-stationery">
 
-        <div class="section-title" style="margin-top:70px;">
-            <h2>Stationery & Gifts</h2>
+        <div class="section-title"
+             style="margin-top:70px;">
+
+            <h2>
+                Stationery & Gifts
+            </h2>
+
         </div>
 
         <div class="product-grid">
 
+
             <div class="product-card">
-                <div class="product-icon">🌸</div>
-                <h3>Sticker Sheet</h3>
-                <p>A cute sticker sheet with a matching theme.</p>
-                <div class="product-price">39 NOK</div>
+
+                <div class="product-icon">
+                    🌸
+                </div>
+
+                <h3>
+                    Sticker Sheet
+                </h3>
+
+                <p>
+                    A cute sticker sheet with a matching theme.
+                </p>
+
+                <div class="product-price">
+                    39 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="addToCart('Sticker Sheet',39)">
                     ADD TO CART
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">✨</div>
-                <h3>Mini Sticker Pack</h3>
-                <p>A small pack with 5 stickers in 1 matching theme.</p>
-                <div class="product-price">25 NOK</div>
+
+                <div class="product-icon">
+                    ✨
+                </div>
+
+                <h3>
+                    Mini Sticker Pack
+                </h3>
+
+                <p>
+                    A small pack with 5 stickers in 1 matching theme.
+                </p>
+
+                <div class="product-price">
+                    25 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="addToCart('Mini Sticker Pack',25)">
                     ADD TO CART
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">📖</div>
-                <h3>Bookmark</h3>
-                <p>A handmade bookmark for your favorite books.</p>
-                <div class="product-price">29 NOK</div>
+
+                <div class="product-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Bookmark
+                </h3>
+
+                <p>
+                    A handmade bookmark for your favorite books.
+                </p>
+
+                <div class="product-price">
+                    29 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="addToCart('Bookmark',29)">
                     ADD TO CART
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">🌿</div>
-                <h3>Custom Bookmark</h3>
-                <p>A personalized handmade bookmark made just for you.</p>
-                <div class="product-price">39 NOK</div>
+
+                <div class="product-icon">
+                    🌿
+                </div>
+
+                <h3>
+                    Custom Bookmark
+                </h3>
+
+                <p>
+                    A personalized handmade bookmark made just for you.
+                </p>
+
+                <div class="product-price">
+                    39 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="openCustom('Custom Bookmark',39)">
                     CUSTOMIZE
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">🖼️</div>
-                <h3>Mini Print</h3>
-                <p>A small decorative print for your room.</p>
-                <div class="product-price">39 NOK</div>
+
+                <div class="product-icon">
+                    🖼️
+                </div>
+
+                <h3>
+                    Mini Print
+                </h3>
+
+                <p>
+                    A small decorative print for your room.
+                </p>
+
+                <div class="product-price">
+                    39 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="addToCart('Mini Print',39)">
                     ADD TO CART
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">💌</div>
-                <h3>Postcard</h3>
-                <p>A cute postcard for someone special.</p>
-                <div class="product-price">25 NOK</div>
+
+                <div class="product-icon">
+                    💌
+                </div>
+
+                <h3>
+                    Postcard
+                </h3>
+
+                <p>
+                    A cute postcard for someone special.
+                </p>
+
+                <div class="product-price">
+                    25 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="addToCart('Postcard',25)">
                     ADD TO CART
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">💌</div>
-                <h3>Greeting Card</h3>
-                <p>A handmade card for birthdays, friendship and more.</p>
-                <div class="product-price">35 NOK</div>
+
+                <div class="product-icon">
+                    💌
+                </div>
+
+                <h3>
+                    Greeting Card
+                </h3>
+
+                <p>
+                    A handmade card for birthdays, friendship and more.
+                </p>
+
+                <div class="product-price">
+                    35 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="addToCart('Greeting Card',35)">
                     ADD TO CART
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">💖</div>
-                <h3>Personalized Card</h3>
-                <p>A custom card made especially for someone.</p>
-                <div class="product-price">45 NOK</div>
+
+                <div class="product-icon">
+                    💖
+                </div>
+
+                <h3>
+                    Personalized Card
+                </h3>
+
+                <p>
+                    A custom card made especially for someone.
+                </p>
+
+                <div class="product-price">
+                    45 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="openCustom('Personalized Card',45)">
                     CUSTOMIZE
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">🏷️</div>
-                <h3>Gift Tag Set</h3>
-                <p>A set of 6 cute handmade gift tags.</p>
-                <div class="product-price">29 NOK</div>
+
+                <div class="product-icon">
+                    🏷️
+                </div>
+
+                <h3>
+                    Gift Tag Set
+                </h3>
+
+                <p>
+                    A set of 6 cute handmade gift tags.
+                </p>
+
+                <div class="product-price">
+                    29 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="addToCart('Gift Tag Set',29)">
                     ADD TO CART
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">💌</div>
-                <h3>Open When Card Set</h3>
-                <p>A set of 5 Open When cards for special moments.</p>
-                <div class="product-price">59 NOK</div>
+
+                <div class="product-icon">
+                    💌
+                </div>
+
+                <h3>
+                    Open When Card Set
+                </h3>
+
+                <p>
+                    A set of 5 Open When cards for special moments.
+                </p>
+
+                <div class="product-price">
+                    59 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="addToCart('Open When Card Set',59)">
                     ADD TO CART
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">🎁</div>
-                <h3>Mystery Mini Pack</h3>
-                <p>A mystery pack containing 4 surprise items.</p>
-                <div class="product-price">49 NOK</div>
+
+                <div class="product-icon">
+                    🎁
+                </div>
+
+                <h3>
+                    Mystery Mini Pack
+                </h3>
+
+                <p>
+                    A mystery pack containing 4 surprise items.
+                </p>
+
+                <div class="product-price">
+                    49 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="addToCart('Mystery Mini Pack',49)">
                     ADD TO CART
                 </button>
+
             </div>
 
+
             <div class="product-card">
-                <div class="product-icon">🫶</div>
-                <h3>Bestie Card + Bracelet</h3>
-                <p>One handmade bracelet and one matching card.</p>
-                <div class="product-price">69 NOK</div>
+
+                <div class="product-icon">
+                    🫶
+                </div>
+
+                <h3>
+                    Bestie Card + Bracelet
+                </h3>
+
+                <p>
+                    One handmade bracelet and one matching card.
+                </p>
+
+                <div class="product-price">
+                    69 NOK
+                </div>
+
                 <button class="order-button"
                         onclick="addToCart('Bestie Card + Bracelet',69)">
                     ADD TO CART
                 </button>
+
             </div>
 
+
         </div>
+
+    </div>
+
+
+    <!-- CUSTOM STICKER -->
+
+    <div class="section-title"
+         style="margin-top:70px;">
+
+        <h2>
+            Custom Stickers
+        </h2>
+
+        <p>
+            Want your own stickers? You choose how many!
+        </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+        <div class="product-card">
+
+            <div class="product-icon">
+                🎨
+            </div>
+
+            <h3>
+                Custom Sticker
+            </h3>
+
+            <p>
+                Your own custom sticker design.
+                10 NOK per sticker.
+            </p>
+
+            <div class="product-price">
+                10 NOK / sticker
+            </div>
+
+            <button class="order-button"
+                    onclick="openStickerCustomizer()">
+
+                CUSTOMIZE
+
+            </button>
+
+        </div>
+
     </div>
 
 </section>
+
+
+<!-- GIFT BOXES -->
 
 <section id="giftboxes">
 
     <div class="section-title">
-        <h2>Gift Boxes</h2>
-        <p>Ready-made little gifts for someone special.</p>
+
+        <h2>
+            Gift Boxes
+        </h2>
+
+        <p>
+            Ready-made little gifts for someone special.
+        </p>
+
     </div>
+
 
     <div class="gift-grid">
 
+
         <div class="gift-card">
-            <div class="product-icon">💖</div>
-            <h3>Bestie Box</h3>
-            <p>A cute friendship-themed surprise box.</p>
-            <div class="product-price">149 NOK</div>
+
+            <div class="product-icon">
+                💖
+            </div>
+
+            <h3>
+                Bestie Box
+            </h3>
+
+            <p>
+                A cute friendship-themed surprise box.
+            </p>
+
+            <div class="product-price">
+                149 NOK
+            </div>
+
             <button class="order-button"
                     onclick="addToCart('Bestie Box',149)">
                 ADD TO CART
             </button>
+
         </div>
 
+
         <div class="gift-card">
-            <div class="product-icon">🎮</div>
-            <h3>Gamer Box</h3>
-            <p>A fun handmade box for gamers.</p>
-            <div class="product-price">149 NOK</div>
+
+            <div class="product-icon">
+                🎮
+            </div>
+
+            <h3>
+                Gamer Box
+            </h3>
+
+            <p>
+                A fun handmade box for gamers.
+            </p>
+
+            <div class="product-price">
+                149 NOK
+            </div>
+
             <button class="order-button"
                     onclick="addToCart('Gamer Box',149)">
                 ADD TO CART
             </button>
+
         </div>
 
+
         <div class="gift-card">
-            <div class="product-icon">🎂</div>
-            <h3>Birthday Box</h3>
-            <p>A cute birthday surprise packed with handmade goodies.</p>
-            <div class="product-price">169 NOK</div>
+
+            <div class="product-icon">
+                🎂
+            </div>
+
+            <h3>
+                Birthday Box
+            </h3>
+
+            <p>
+                A cute birthday surprise packed with handmade goodies.
+            </p>
+
+            <div class="product-price">
+                169 NOK
+            </div>
+
             <button class="order-button"
                     onclick="addToCart('Birthday Box',169)">
                 ADD TO CART
             </button>
+
         </div>
 
+
         <div class="gift-card">
-            <div class="product-icon">🌷</div>
-            <h3>Just Because</h3>
-            <p>A little gift for absolutely no reason.</p>
-            <div class="product-price">129 NOK</div>
+
+            <div class="product-icon">
+                🌷
+            </div>
+
+            <h3>
+                Just Because
+            </h3>
+
+            <p>
+                A little gift for absolutely no reason.
+            </p>
+
+            <div class="product-price">
+                129 NOK
+            </div>
+
             <button class="order-button"
                     onclick="addToCart('Just Because',129)">
                 ADD TO CART
             </button>
+
         </div>
 
+
         <div class="gift-card">
-            <div class="product-icon">✨</div>
-            <h3>Mini Surprise</h3>
-            <p>A small surprise box filled with cute items.</p>
-            <div class="product-price">79 NOK</div>
+
+            <div class="product-icon">
+                ✨
+            </div>
+
+            <h3>
+                Mini Surprise
+            </h3>
+
+            <p>
+                A small surprise box filled with cute items.
+            </p>
+
+            <div class="product-price">
+                79 NOK
+            </div>
+
             <button class="order-button"
                     onclick="addToCart('Mini Surprise',79)">
                 ADD TO CART
             </button>
+
         </div>
 
+
         <div class="gift-card">
-            <div class="product-icon">🎁</div>
-            <h3>Big Surprise</h3>
-            <p>A bigger mystery box packed with handmade surprises.</p>
-            <div class="product-price">199 NOK</div>
+
+            <div class="product-icon">
+                🎁
+            </div>
+
+            <h3>
+                Big Surprise
+            </h3>
+
+            <p>
+                A bigger mystery box packed with handmade surprises.
+            </p>
+
+            <div class="product-price">
+                199 NOK
+            </div>
+
             <button class="order-button"
                     onclick="addToCart('Big Surprise',199)">
                 ADD TO CART
             </button>
+
         </div>
 
+
         <div class="gift-card">
-            <div class="product-icon">🫶</div>
-            <h3>Friendship Set</h3>
-            <p>A matching handmade set made for best friends.</p>
-            <div class="product-price">199 NOK</div>
+
+            <div class="product-icon">
+                🫶
+            </div>
+
+            <h3>
+                Friendship Set
+            </h3>
+
+            <p>
+                A matching handmade set made for best friends.
+            </p>
+
+            <div class="product-price">
+                199 NOK
+            </div>
+
             <button class="order-button"
                     onclick="addToCart('Friendship Set',199)">
                 ADD TO CART
             </button>
+
         </div>
 
+
         <div class="gift-card">
-            <div class="product-icon">💌</div>
-            <h3>Open When Box</h3>
-            <p>A thoughtful box filled with Open When surprises.</p>
-            <div class="product-price">129 NOK</div>
+
+            <div class="product-icon">
+                💌
+            </div>
+
+            <h3>
+                Open When Box
+            </h3>
+
+            <p>
+                A thoughtful box filled with Open When surprises.
+            </p>
+
+            <div class="product-price">
+                129 NOK
+            </div>
+
             <button class="order-button"
                     onclick="addToCart('Open When Box',129)">
                 ADD TO CART
             </button>
+
         </div>
 
+
         <div class="gift-card">
-            <div class="product-icon">🎀</div>
-            <h3>Custom Box</h3>
-            <p>A handmade gift box created around your ideas.</p>
-            <div class="product-price">149 NOK</div>
+
+            <div class="product-icon">
+                🎀
+            </div>
+
+            <h3>
+                Custom Box
+            </h3>
+
+            <p>
+                A handmade gift box created around your ideas.
+            </p>
+
+            <div class="product-price">
+                149 NOK
+            </div>
+
             <button class="order-button"
                     onclick="openCustom('Custom Box',149)">
                 CUSTOMIZE
             </button>
+
         </div>
 
+
     </div>
+
 </section>
+
+
+<!-- CUSTOM -->
 
 <section id="custom">
 
     <div class="section-title">
-        <h2>Custom</h2>
-        <p>Want something made especially for you?</p>
+
+        <h2>
+            Custom
+        </h2>
+
+        <p>
+            Want something made especially for you?
+        </p>
+
     </div>
+
 
     <div class="custom-box">
 
-        <h3>Make It Yours ♡</h3>
+        <h3>
+            Make It Yours ♡
+        </h3>
 
         <p>
             Choose a product and customize it before adding it to your cart.
         </p>
+
 
         <div class="choice-buttons">
 
@@ -947,50 +1630,203 @@
                 ✨ Build Your Own Box
             </button>
 
+            <button class="choice-button"
+                    onclick="openStickerCustomizer()">
+                🎨 Custom Sticker
+            </button>
+
         </div>
 
-        <div id="customChoiceBox" class="custom-choice-box">
 
-            <h3 id="customTitle">Customize</h3>
+        <div id="customChoiceBox"
+             class="custom-choice-box">
+
+            <h3 id="customTitle">
+                Customize
+            </h3>
+
 
             <label>
                 Color / style
+
                 <select id="customColor">
-                    <option value="Pink">Pink</option>
-                    <option value="Purple">Purple</option>
-                    <option value="Blue">Blue</option>
-                    <option value="Green">Green</option>
-                    <option value="Red">Red</option>
-                    <option value="Yellow">Yellow</option>
-                    <option value="Black & White">Black & White</option>
-                    <option value="Mixed / Surprise">Mixed / Surprise</option>
+
+                    <option value="Pink">
+                        Pink
+                    </option>
+
+                    <option value="Purple">
+                        Purple
+                    </option>
+
+                    <option value="Blue">
+                        Blue
+                    </option>
+
+                    <option value="Green">
+                        Green
+                    </option>
+
+                    <option value="Red">
+                        Red
+                    </option>
+
+                    <option value="Yellow">
+                        Yellow
+                    </option>
+
+                    <option value="Black & White">
+                        Black & White
+                    </option>
+
+                    <option value="Mixed / Surprise">
+                        Mixed / Surprise
+                    </option>
+
                 </select>
+
             </label>
+
 
             <label>
                 Theme
+
                 <select id="customTheme">
-                    <option value="Cute">Cute</option>
-                    <option value="Friendship">Friendship</option>
-                    <option value="Gamer">Gamer</option>
-                    <option value="Flowers">Flowers</option>
-                    <option value="Stars">Stars</option>
-                    <option value="Mystery">Mystery</option>
-                    <option value="Other">Other</option>
+
+                    <option value="Cute">
+                        Cute
+                    </option>
+
+                    <option value="Friendship">
+                        Friendship
+                    </option>
+
+                    <option value="Gamer">
+                        Gamer
+                    </option>
+
+                    <option value="Flowers">
+                        Flowers
+                    </option>
+
+                    <option value="Stars">
+                        Stars
+                    </option>
+
+                    <option value="Mystery">
+                        Mystery
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
                 </select>
+
             </label>
+
 
             <label>
                 Extra details
+
                 <input id="customDetails"
                        type="text"
                        placeholder="Anything specific you want?">
+
             </label>
+
 
             <button class="main-button"
                     style="margin-top:20px;width:100%;"
                     onclick="addCustomizedItem()">
+
                 ADD CUSTOMIZED ITEM
+
+            </button>
+
+        </div>
+
+
+        <!-- STICKER CUSTOMIZER -->
+
+        <div id="stickerChoiceBox"
+             class="custom-choice-box">
+
+            <h3>
+                🎨 Custom Stickers
+            </h3>
+
+            <div class="sticker-info">
+
+                <strong>
+                    10 NOK per sticker
+                </strong>
+
+                <br>
+
+                Choose how many stickers you want.
+                For example: 100 stickers = 1000 NOK.
+
+            </div>
+
+
+            <label>
+                Antall custom stickers
+
+                <input id="stickerQuantity"
+                       type="number"
+                       min="1"
+                       value="1"
+                       oninput="updateStickerPrice()">
+
+            </label>
+
+
+            <label>
+                Custom info
+
+                <textarea id="stickerInfo"
+                          placeholder="Fortell hva du ønsker på stickerene..."></textarea>
+
+            </label>
+
+
+            <label>
+                Bilde/motiv??
+
+                <textarea id="stickerImageInfo"
+                          placeholder="Beskriv bildet/motivet, eller skriv at du sender det på telefon."></textarea>
+
+            </label>
+
+
+            <div class="sticker-info">
+
+                Har du et bilde eller motiv du vil eg ska lage??
+
+                <br><br>
+
+                Send det til meg på
+                <strong>+47 91539075</strong>
+                <strong>MED NAMN</strong>.
+
+            </div>
+
+
+            <div class="product-price"
+                 id="stickerPrice">
+
+                10 NOK
+
+            </div>
+
+
+            <button class="main-button"
+                    style="width:100%;"
+                    onclick="addCustomSticker()">
+
+                ADD CUSTOM STICKERS
+
             </button>
 
         </div>
@@ -999,12 +1835,23 @@
 
 </section>
 
+
+<!-- ABOUT -->
+
 <section id="about">
 
     <div class="section-title">
-        <h2>About Serina Studio</h2>
-        <p>Handmade with creativity and lots of love.</p>
+
+        <h2>
+            About Serina Studio
+        </h2>
+
+        <p>
+            Handmade with creativity and lots of love.
+        </p>
+
     </div>
+
 
     <div class="about-content">
 
@@ -1024,209 +1871,365 @@
         </p>
 
     </div>
+
 </section>
+
+
+<!-- CONTACT -->
 
 <section id="contact">
 
     <div class="section-title">
-        <h2>Contact</h2>
-        <p>Have a question or a custom idea?</p>
+
+        <h2>
+            Contact
+        </h2>
+
+        <p>
+            Have a question or a custom idea?
+        </p>
+
     </div>
+
 
     <div class="contact-box">
 
-        <p>💌 Contact Serina Studio about custom orders, questions or ideas.</p>
-        <p>Instagram: @serinastudio</p>
+        <p>
+            💌 Contact Serina Studio about custom orders, questions or ideas.
+        </p>
+
+        <p>
+            Instagram: @serinastudio
+        </p>
 
     </div>
+
 </section>
+
+
+<!-- CHECKOUT -->
 
 <section id="checkout">
 
     <div class="section-title">
-        <h2>Checkout</h2>
-        <p>Fill in your information to place your order.</p>
+
+        <h2>
+            Checkout
+        </h2>
+
+        <p>
+            Fill in your information to place your order.
+        </p>
+
     </div>
+
 
     <div class="checkout-container">
 
+
         <div class="checkout-box">
 
-            <h3>Your Information</h3>
+            <h3>
+                Your Information
+            </h3>
+
 
             <div class="form-group">
-                <label>Name *</label>
+
+                <label>
+                    Name *
+                </label>
+
                 <input id="checkoutName"
                        type="text"
                        placeholder="Your name">
+
             </div>
 
+
             <div class="form-group">
-                <label>Email *</label>
+
+                <label>
+                    Email *
+                </label>
+
                 <input id="checkoutEmail"
                        type="email"
                        placeholder="your@email.com">
+
             </div>
 
+
             <div class="form-group">
-                <label>Address *</label>
+
+                <label>
+                    Address *
+                </label>
+
                 <input id="checkoutAddress"
                        type="text"
                        placeholder="Street address">
+
             </div>
 
+
             <div class="form-group">
-                <label>Postnummer *</label>
+
+                <label>
+                    Postnummer *
+                </label>
+
                 <input id="checkoutPostcode"
                        type="text"
                        placeholder="5262">
+
             </div>
 
+
             <div class="form-group">
-                <label>By *</label>
+
+                <label>
+                    By *
+                </label>
+
                 <input id="checkoutCity"
                        type="text"
                        placeholder="Arnatveit">
+
             </div>
+
 
             <div class="form-group">
-                <label>Order note</label>
+
+                <label>
+                    Order note
+                </label>
+
                 <textarea id="checkoutNote"
                           placeholder="Anything you'd like me to know?"></textarea>
+
             </div>
 
-            <h3>Payment</h3>
+
+            <h3>
+                Payment
+            </h3>
+
 
             <div class="payment-options">
 
                 <label class="payment-option">
+
                     <input type="radio"
                            name="payment"
                            value="Vipps">
+
                     Vipps
+
                 </label>
 
+
                 <label class="payment-option">
+
                     <input type="radio"
                            name="payment"
                            value="Other">
+
                     Other payment
+
                 </label>
 
             </div>
 
         </div>
 
+
         <div class="checkout-box">
 
-            <h3>Your Order</h3>
+            <h3>
+                Your Order
+            </h3>
+
 
             <div id="checkoutItems"
-                 class="checkout-items"></div>
+                 class="checkout-items">
+            </div>
+
 
             <div class="checkout-total">
-                <span>Total</span>
-                <span id="checkoutTotal">0 NOK</span>
+
+                <span>
+                    Total
+                </span>
+
+                <span id="checkoutTotal">
+                    0 NOK
+                </span>
+
             </div>
+
 
             <button class="place-order-button"
                     onclick="placeOrder()">
+
                 PLACE ORDER
+
             </button>
 
         </div>
 
     </div>
+
 </section>
+
+
+<!-- SUCCESS -->
 
 <section id="successMessage">
 
-    <h2>Order received! 🎉</h2>
+    <h2>
+        Order received! 🎉
+    </h2>
+
 
     <p>
         Thank you for ordering from Serina Studio ♡
     </p>
 
+
     <p>
         Bestillingskoden din er:
     </p>
+
 
     <div id="displayOrderCode"
          class="order-code">
     </div>
 
+
     <div class="vipps-box">
 
         <strong>
-            Betaling med Vipps
+            💙 BETAL MED VIPPS
         </strong>
 
-        <p>
-            Send betalingen med bestillingskoden din i meldingen.
+
+        <div class="vipps-number">
+            91539075
+        </div>
+
+
+        <div class="vipps-name">
+            Serina Eriksen
+        </div>
+
+
+        <p style="margin-top:15px;">
+            Send betalingen til nummeret over.
         </p>
 
-        <p>
-            Husk å skrive:
-            <strong id="vippsMessage"></strong>
-        </p>
 
-        <a id="vippsLink"
-           class="vipps-button"
-           href="#"
-           target="_blank">
-            ÅPNE VIPPS
-        </a>
+        <div class="vipps-message">
+
+            Skriv denne bestillingskoden i Vipps-meldingen:
+
+            <br><br>
+
+            <strong id="vippsMessage">
+            </strong>
+
+        </div>
 
     </div>
 
+
     <p>
-        Når bestillingen er registrert, finner du den i Google Sheets.
+        Når du har betalt, kan eg matche betalingen
+        med bestillingen din ved hjelp av koden.
     </p>
+
 
     <br>
 
+
     <button class="main-button"
             onclick="goHome()">
+
         BACK TO SHOP
+
     </button>
 
 </section>
+
+
+<!-- CART -->
 
 <div id="cartOverlay"
      class="cart-overlay"
      onclick="closeCartOutside(event)">
 
+
     <div class="cart-panel"
          onclick="event.stopPropagation()">
 
+
         <div class="cart-header">
-            <h2>Your Cart</h2>
+
+            <h2>
+                Your Cart
+            </h2>
 
             <button class="close-cart"
                     onclick="closeCart()">
+
                 ×
+
             </button>
+
         </div>
 
-        <div id="cartItems"></div>
+
+        <div id="cartItems">
+        </div>
+
 
         <div class="cart-total">
-            <span>Total</span>
-            <span id="cartTotal">0 NOK</span>
+
+            <span>
+                Total
+            </span>
+
+            <span id="cartTotal">
+                0 NOK
+            </span>
+
         </div>
+
 
         <button class="checkout-button"
                 onclick="goToCheckout()">
+
             GO TO CHECKOUT
+
         </button>
 
     </div>
+
 </div>
 
+
 <footer>
-    <p>© 2026 Serina Studio ♡</p>
-    <p>Handmade with love.</p>
+
+    <p>
+        © 2026 Serina Studio ♡
+    </p>
+
+    <p>
+        Handmade with love.
+    </p>
+
 </footer>
+
 
 <script>
 
@@ -1239,28 +2242,49 @@
 
 
     /* =====================================================
-       GOOGLE FORM ENTRY IDS
+       GOOGLE FORM FIELDS
     ===================================================== */
 
     const FORM_FIELDS = {
 
-        name: "entry.1110997812",
+        name:
+            "entry.1110997812",
 
-        email: "entry.1072487814",
+        email:
+            "entry.1072487814",
 
-        address: "entry.1558793954",
+        address:
+            "entry.1558793954",
 
-        postcode: "entry.1206510494",
+        postcode:
+            "entry.1206510494",
 
-        city: "entry.1345658098",
+        city:
+            "entry.1345658098",
 
-        order: "entry.1631403071",
+        order:
+            "entry.1631403071",
 
-        total: "entry.233813138",
+        total:
+            "entry.233813138",
 
-        payment: "entry.107401372",
+        payment:
+            "entry.107401372",
 
-        note: "entry.1072075807"
+        note:
+            "entry.1072075807",
+
+        orderCode:
+            "entry.924810662",
+
+        customInfo:
+            "entry.311249784",
+
+        customStickerCount:
+            "entry.684697229",
+
+        imageMotif:
+            "entry.1415215279"
 
     };
 
@@ -1275,6 +2299,19 @@
 
 
     /* =====================================================
+       CUSTOM DATA
+    ===================================================== */
+
+    let customStickerData = {
+
+        info:"",
+        quantity:0,
+        imageMotif:""
+
+    };
+
+
+    /* =====================================================
        ADD TO CART
     ===================================================== */
 
@@ -1283,6 +2320,7 @@
         const existingItem =
             cart.find(item => item.name === name);
 
+
         if(existingItem){
 
             existingItem.quantity++;
@@ -1290,65 +2328,94 @@
         }else{
 
             cart.push({
+
                 name:name,
+
                 price:price,
+
                 quantity:1
+
             });
 
         }
 
+
         updateCart();
 
         openCart();
+
     }
 
 
     /* =====================================================
-       CUSTOM PRODUCT
+       NORMAL CUSTOM PRODUCT
     ===================================================== */
 
     function openCustom(name,price){
 
         selectedCustom = {
+
             name:name,
+
             price:price
+
         };
 
+
         document.getElementById("customTitle")
-            .textContent = "Customize " + name;
+            .textContent =
+            "Customize " + name;
+
 
         document.getElementById("customChoiceBox")
             .classList.add("show");
 
+
+        document.getElementById("stickerChoiceBox")
+            .classList.remove("show");
+
+
         document.getElementById("customChoiceBox")
             .scrollIntoView({
+
                 behavior:"smooth",
+
                 block:"center"
+
             });
+
     }
 
 
     /* =====================================================
-       ADD CUSTOMIZED ITEM
+       ADD NORMAL CUSTOM ITEM
     ===================================================== */
 
     function addCustomizedItem(){
 
         if(!selectedCustom){
 
-            alert("Choose a custom product first.");
+            alert(
+                "Choose a custom product first."
+            );
 
             return;
+
         }
+
 
         const color =
             document.getElementById("customColor").value;
 
+
         const theme =
             document.getElementById("customTheme").value;
 
+
         const details =
-            document.getElementById("customDetails").value.trim();
+            document.getElementById("customDetails")
+                .value
+                .trim();
 
 
         let customization =
@@ -1382,7 +2449,9 @@
         });
 
 
-        document.getElementById("customDetails").value = "";
+        document.getElementById("customDetails")
+            .value = "";
+
 
         document.getElementById("customChoiceBox")
             .classList.remove("show");
@@ -1390,9 +2459,185 @@
 
         selectedCustom = null;
 
+
         updateCart();
 
         openCart();
+
+    }
+
+
+    /* =====================================================
+       OPEN STICKER CUSTOMIZER
+    ===================================================== */
+
+    function openStickerCustomizer(){
+
+        document.getElementById("customChoiceBox")
+            .classList.remove("show");
+
+
+        document.getElementById("stickerChoiceBox")
+            .classList.add("show");
+
+
+        document.getElementById("stickerChoiceBox")
+            .scrollIntoView({
+
+                behavior:"smooth",
+
+                block:"center"
+
+            });
+
+
+        updateStickerPrice();
+
+    }
+
+
+    /* =====================================================
+       UPDATE STICKER PRICE
+    ===================================================== */
+
+    function updateStickerPrice(){
+
+        let quantity =
+            parseInt(
+                document.getElementById("stickerQuantity").value
+            );
+
+
+        if(isNaN(quantity) || quantity < 1){
+
+            quantity = 1;
+
+        }
+
+
+        const price =
+            quantity * 10;
+
+
+        document.getElementById("stickerPrice")
+            .textContent =
+            price + " NOK";
+
+    }
+
+
+    /* =====================================================
+       ADD CUSTOM STICKER
+    ===================================================== */
+
+    function addCustomSticker(){
+
+        let quantity =
+            parseInt(
+                document.getElementById("stickerQuantity").value
+            );
+
+
+        const info =
+            document.getElementById("stickerInfo")
+                .value
+                .trim();
+
+
+        const imageMotif =
+            document.getElementById("stickerImageInfo")
+                .value
+                .trim();
+
+
+        if(isNaN(quantity) || quantity < 1){
+
+            alert(
+                "Skriv inn hvor mange stickers du vil ha."
+            );
+
+            return;
+
+        }
+
+
+        if(!info){
+
+            alert(
+                "Skriv litt informasjon om hvordan du vil ha stickerene."
+            );
+
+            return;
+
+        }
+
+
+        const price =
+            quantity * 10;
+
+
+        const itemName =
+            "Custom Sticker x" +
+            quantity;
+
+
+        cart.push({
+
+            name:itemName,
+
+            price:price,
+
+            quantity:1,
+
+            customSticker:true,
+
+            stickerQuantity:quantity,
+
+            customInfo:info,
+
+            imageMotif:imageMotif
+
+        });
+
+
+        /*
+           Save custom information
+           for Google Forms.
+        */
+
+        customStickerData.info = info;
+
+        customStickerData.quantity = quantity;
+
+        customStickerData.imageMotif = imageMotif;
+
+
+        /*
+           Reset form.
+        */
+
+        document.getElementById("stickerQuantity")
+            .value = 1;
+
+
+        document.getElementById("stickerInfo")
+            .value = "";
+
+
+        document.getElementById("stickerImageInfo")
+            .value = "";
+
+
+        document.getElementById("stickerChoiceBox")
+            .classList.remove("show");
+
+
+        updateStickerPrice();
+
+        updateCart();
+
+        openCart();
+
     }
 
 
@@ -1405,14 +2650,17 @@
         const cartItems =
             document.getElementById("cartItems");
 
+
         const cartCount =
             document.getElementById("cartCount");
+
 
         const cartTotal =
             document.getElementById("cartTotal");
 
 
         cartItems.innerHTML = "";
+
 
         let total = 0;
 
@@ -1422,9 +2670,13 @@
         if(cart.length === 0){
 
             cartItems.innerHTML = `
-            <div class="cart-empty">
-                Your cart is empty ♡
-            </div>
+
+        <div class="cart-empty">
+
+            Your cart is empty ♡
+
+        </div>
+
         `;
 
         }
@@ -1435,6 +2687,7 @@
             const itemTotal =
                 item.price * item.quantity;
 
+
             total += itemTotal;
 
             count += item.quantity;
@@ -1443,50 +2696,60 @@
             const div =
                 document.createElement("div");
 
-            div.className = "cart-item";
+
+            div.className =
+                "cart-item";
 
 
             div.innerHTML = `
 
-            <div>
+        <div>
 
-                <div class="cart-item-name">
-                    ${escapeHtml(item.name)}
-                </div>
+            <div class="cart-item-name">
 
-                <div class="cart-item-price">
-                    ${item.price} NOK
-                </div>
+                ${escapeHtml(item.name)}
 
-                <div class="quantity-controls">
+            </div>
 
-                    <button
-                        onclick="changeQuantity(${index},-1)">
-                        −
-                    </button>
+            <div class="cart-item-price">
 
-                    <span>
-                        ${item.quantity}
-                    </span>
+                ${item.price} NOK
 
-                    <button
-                        onclick="changeQuantity(${index},1)">
-                        +
-                    </button>
+            </div>
 
-                </div>
+            <div class="quantity-controls">
 
                 <button
-                    class="remove-button"
-                    onclick="removeFromCart(${index})">
-                    Remove
+                    onclick="changeQuantity(${index},-1)">
+                    −
+                </button>
+
+                <span>
+                    ${item.quantity}
+                </span>
+
+                <button
+                    onclick="changeQuantity(${index},1)">
+                    +
                 </button>
 
             </div>
 
-            <div>
-                ${itemTotal} NOK
-            </div>
+            <button
+                class="remove-button"
+                onclick="removeFromCart(${index})">
+
+                Remove
+
+            </button>
+
+        </div>
+
+        <div>
+
+            ${itemTotal} NOK
+
+        </div>
 
         `;
 
@@ -1496,18 +2759,21 @@
         });
 
 
-        cartCount.textContent = count;
+        cartCount.textContent =
+            count;
+
 
         cartTotal.textContent =
             total + " NOK";
 
 
         updateCheckout();
+
     }
 
 
     /* =====================================================
-       HTML ESCAPE
+       ESCAPE HTML
     ===================================================== */
 
     function escapeHtml(text){
@@ -1539,6 +2805,7 @@
 
 
         updateCart();
+
     }
 
 
@@ -1551,11 +2818,12 @@
         cart.splice(index,1);
 
         updateCart();
+
     }
 
 
     /* =====================================================
-       CART OPEN
+       CART
     ===================================================== */
 
     function openCart(){
@@ -1566,10 +2834,6 @@
     }
 
 
-    /* =====================================================
-       CART CLOSE
-    ===================================================== */
-
     function closeCart(){
 
         document.getElementById("cartOverlay")
@@ -1577,10 +2841,6 @@
 
     }
 
-
-    /* =====================================================
-       CLOSE OUTSIDE
-    ===================================================== */
 
     function closeCartOutside(event){
 
@@ -1602,11 +2862,14 @@
         const accessories =
             document.getElementById("category-accessories");
 
+
         const stationery =
             document.getElementById("category-stationery");
 
+
         const giftboxes =
             document.getElementById("giftboxes");
+
 
         const custom =
             document.getElementById("custom");
@@ -1653,18 +2916,6 @@
                 : "none";
 
 
-        const target =
-            category === "giftboxes"
-                ? giftboxes
-                : category === "custom"
-                    ? custom
-                    : document.getElementById("shop");
-
-
-        target.scrollIntoView({
-            behavior:"smooth"
-        });
-
     }
 
 
@@ -1676,7 +2927,9 @@
 
         if(cart.length === 0){
 
-            alert("Your cart is empty.");
+            alert(
+                "Your cart is empty."
+            );
 
             return;
 
@@ -1696,11 +2949,14 @@
 
         document.getElementById("checkout")
             .scrollIntoView({
+
                 behavior:"smooth"
+
             });
 
 
         updateCheckout();
+
     }
 
 
@@ -1712,6 +2968,7 @@
 
         const container =
             document.getElementById("checkoutItems");
+
 
         const totalElement =
             document.getElementById("checkoutTotal");
@@ -1726,6 +2983,7 @@
 
         container.innerHTML = "";
 
+
         let total = 0;
 
 
@@ -1734,11 +2992,13 @@
             const itemTotal =
                 item.price * item.quantity;
 
+
             total += itemTotal;
 
 
             const div =
                 document.createElement("div");
+
 
             div.className =
                 "checkout-item";
@@ -1746,14 +3006,18 @@
 
             div.innerHTML = `
 
-            <span>
-                ${escapeHtml(item.name)}
-                × ${item.quantity}
-            </span>
+        <span>
 
-            <strong>
-                ${itemTotal} NOK
-            </strong>
+            ${escapeHtml(item.name)}
+            × ${item.quantity}
+
+        </span>
+
+        <strong>
+
+            ${itemTotal} NOK
+
+        </strong>
 
         `;
 
@@ -1778,7 +3042,9 @@
         const chars =
             "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
-        let code = "SS-";
+
+        let code =
+            "SS-";
 
 
         for(let i=0;i<6;i++){
@@ -1807,12 +3073,46 @@
         return cart.map(function(item){
 
             return (
+
                 item.name +
+
                 " x" +
+
                 item.quantity
+
             );
 
         }).join(" | ");
+
+    }
+
+
+    /* =====================================================
+       CUSTOM INFO
+    ===================================================== */
+
+    function getCustomInfo(){
+
+        const normalCustomItems =
+            cart.filter(item =>
+                !item.customSticker &&
+                item.name.includes("(")
+            );
+
+
+        let result = [];
+
+
+        normalCustomItems.forEach(function(item){
+
+            result.push(
+                item.name
+            );
+
+        });
+
+
+        return result.join(" | ");
 
     }
 
@@ -1825,32 +3125,38 @@
 
         const name =
             document.getElementById("checkoutName")
-                .value.trim();
+                .value
+                .trim();
 
 
         const email =
             document.getElementById("checkoutEmail")
-                .value.trim();
+                .value
+                .trim();
 
 
         const address =
             document.getElementById("checkoutAddress")
-                .value.trim();
+                .value
+                .trim();
 
 
         const postcode =
             document.getElementById("checkoutPostcode")
-                .value.trim();
+                .value
+                .trim();
 
 
         const city =
             document.getElementById("checkoutCity")
-                .value.trim();
+                .value
+                .trim();
 
 
         const note =
             document.getElementById("checkoutNote")
-                .value.trim();
+                .value
+                .trim();
 
 
         const paymentElement =
@@ -1878,7 +3184,9 @@
 
         if(cart.length === 0){
 
-            alert("Your cart is empty.");
+            alert(
+                "Your cart is empty."
+            );
 
             return;
 
@@ -1887,7 +3195,9 @@
 
         if(!paymentElement){
 
-            alert("Please choose a payment method.");
+            alert(
+                "Please choose a payment method."
+            );
 
             return;
 
@@ -1904,7 +3214,8 @@
         cart.forEach(function(item){
 
             total +=
-                item.price * item.quantity;
+                item.price *
+                item.quantity;
 
         });
 
@@ -1921,7 +3232,78 @@
 
 
         /*
-           Google Forms data
+           Custom sticker information
+        */
+
+        let stickerCount = 0;
+
+        let stickerInfo = "";
+
+        let imageMotif = "";
+
+
+        const stickerItems =
+            cart.filter(
+                item => item.customSticker
+            );
+
+
+        stickerItems.forEach(function(item){
+
+            stickerCount +=
+                item.stickerQuantity;
+
+
+            stickerInfo +=
+                item.customInfo +
+                " | ";
+
+
+            if(item.imageMotif){
+
+                imageMotif +=
+                    item.imageMotif +
+                    " | ";
+
+            }
+
+        });
+
+
+        /*
+           Remove trailing separators.
+        */
+
+        stickerInfo =
+            stickerInfo.replace(/\s\|\s$/,"");
+
+
+        imageMotif =
+            imageMotif.replace(/\s\|\s$/,"");
+
+
+        /*
+           Normal custom products
+        */
+
+        const normalCustomInfo =
+            getCustomInfo();
+
+
+        if(normalCustomInfo){
+
+            stickerInfo =
+                stickerInfo
+                    ? stickerInfo +
+                    " | " +
+                    normalCustomInfo
+                    : normalCustomInfo;
+
+        }
+
+
+        /*
+           Google Forms
         */
 
         const formData =
@@ -1987,25 +3369,71 @@
         );
 
 
+        /*
+           BESTILLINGSKODE
+        */
+
+        formData.append(
+            FORM_FIELDS.orderCode,
+            orderCode
+        );
+
+
+        /*
+           CUSTOM INFO
+        */
+
+        formData.append(
+            FORM_FIELDS.customInfo,
+            stickerInfo
+        );
+
+
+        /*
+           ANTALL CUSTOM STICKERS
+        */
+
+        formData.append(
+            FORM_FIELDS.customStickerCount,
+            stickerCount
+                ? String(stickerCount)
+                : ""
+        );
+
+
+        /*
+           BILDE / MOTIV
+        */
+
+        formData.append(
+            FORM_FIELDS.imageMotif,
+            imageMotif
+                ? imageMotif
+                : "Sendes til +47 91539075 med navn"
+        );
+
+
         try{
 
-            /*
-               no-cors is needed because Google Forms
-               does not allow normal browser CORS requests.
-            */
-
             await fetch(
+
                 GOOGLE_FORM_URL,
+
                 {
+
                     method:"POST",
+
                     mode:"no-cors",
+
                     body:formData
+
                 }
+
             );
 
 
             /*
-               Show success page
+               SUCCESS PAGE
             */
 
             document.getElementById("checkout")
@@ -2017,34 +3445,30 @@
 
 
             document.getElementById("displayOrderCode")
-                .textContent = orderCode;
+                .textContent =
+                orderCode;
 
 
             document.getElementById("vippsMessage")
                 .textContent =
-                "Serina Studio " +
                 orderCode;
 
 
-            /*
-               Vipps link.
-
-               Replace this URL with your actual
-               Vipps payment link when you have one.
-            */
-
-            document.getElementById("vippsLink")
-                .href =
-                "https://vipps.no/";
-
-
             window.scrollTo({
+
                 top:0,
+
                 behavior:"smooth"
+
             });
 
 
+            /*
+               Clear cart
+            */
+
             cart = [];
+
 
             updateCart();
 
@@ -2056,17 +3480,22 @@
             document.getElementById("checkoutName")
                 .value = "";
 
+
             document.getElementById("checkoutEmail")
                 .value = "";
+
 
             document.getElementById("checkoutAddress")
                 .value = "";
 
+
             document.getElementById("checkoutPostcode")
                 .value = "";
 
+
             document.getElementById("checkoutCity")
                 .value = "";
+
 
             document.getElementById("checkoutNote")
                 .value = "";
@@ -2081,9 +3510,23 @@
             });
 
 
+            /*
+               Clear custom sticker data
+            */
+
+            customStickerData = {
+
+                info:"",
+                quantity:0,
+                imageMotif:""
+
+            };
+
+
         }catch(error){
 
             console.error(error);
+
 
             alert(
                 "Kunne ikkje sende bestillingen. Prøv igjen."
@@ -2106,7 +3549,9 @@
 
         document.getElementById("home")
             .scrollIntoView({
+
                 behavior:"smooth"
+
             });
 
     }
@@ -2118,8 +3563,9 @@
 
     updateCart();
 
+    updateStickerPrice();
+
 </script>
 
 </body>
 </html>
-```
